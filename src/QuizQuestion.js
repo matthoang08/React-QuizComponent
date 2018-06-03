@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Quiz from './Quiz';
 
-class QuizQuestion extends React.Component {
+class QuizQuestion extends Component {
 
     render() {
         return (
