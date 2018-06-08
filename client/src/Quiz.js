@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import QuizQuestion from './QuizQuestion.js';
 import QuizEnd from './QuizEnd';
+import axios from 'axios';
 
 let quizData = require('./quiz_data.json');
 
@@ -10,6 +11,18 @@ class Quiz extends Component {
         super(props);
         this.state = {
             quiz_position: 1
+        }
+    }
+
+    async componentDidMount() {
+
+        try {
+            const res = await axios.get('/api/title');
+            this.setState({
+                title: res.data.title
+            });
+        } catch (err) {
+            console.log(err);
         }
     }
 
@@ -45,7 +58,10 @@ class Quiz extends Component {
 
         return (
             <div>
-                {result}
+                <h4>{this.state.title}</h4>
+                <div>
+                    {result}
+                </div>
             </div>
         );
     }

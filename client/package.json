@@ -2,11 +2,13 @@
   "name": "build-a-quiz-component-with-react",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "jshint": "^2.9.5",
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "axios": "^0.18.0"
   },
   "scripts": {
     "start": "react-scripts start",
